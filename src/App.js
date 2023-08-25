@@ -1,7 +1,9 @@
 import "./App.css";
+import List from "./components/List";
 import { useState } from "react";
 import { uid } from "uid";
 import Form from "./components/Form";
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
   const [activities, setActivities] = useState("");
@@ -11,6 +13,7 @@ function App() {
   }
   return (
     <>
+      <List />
       <Form onAddActivity={handleAddActivity} />
     </>
   );
