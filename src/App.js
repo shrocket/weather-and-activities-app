@@ -1,15 +1,13 @@
 import "./App.css";
 import { useState } from "react";
 import { uid } from "uid";
+import Form from "./components/Form";
 
 function App() {
-
-
-  function 
   return (
-    <div className="App">
-      <header className="App-header"></header>
-    </div>
+    <>
+      <Form />
+    </>
   );
 }
 
