@@ -14,7 +14,7 @@ export default function Form({ onAddActivity }) {
       isSunnyWeather: formElements.isSunnyWeather.checked,
     };
 
-    // onAddActivity(newActivity);
+    onAddActivity(newActivity);
     console.log(newActivity);
     event.target.reset();
   }
