@@ -1,12 +1,9 @@
-import { Fragment } from "react";
-import useLocalStorageState from "use-local-storage-state";
-import App from "../App";
-
-export default function List(activities) {
+export default function List({ activities }) {
+  console.log(activities);
   const listItems = activities.map((activity) => (
     <li key={activity.id}>
       {activity.name}
-      {activity.isSunnyWeather}
+      {activity.isSunnyWeather ? "😎" : "🌧️"}
     </li>
   ));
 
