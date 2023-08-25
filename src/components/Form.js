@@ -5,7 +5,7 @@ export default function Form({ onAddActivity }) {
     // const activityData = Object.fromEntries(formData);
     // const newActivity = {
     //   ...activityData,
-    //   isSunnyWeather: "on" === activityData.isSunnyWeather ? true : false,
+    //   isSunnyWeather: "on" === activityData.isSunnyWeather ? true : false, --or-- isSunnyWeather: "on" === activityData.isSunnyWeather
     // };
 
     const formElements = event.target.elements;
@@ -14,6 +14,7 @@ export default function Form({ onAddActivity }) {
       isSunnyWeather: formElements.isSunnyWeather.checked,
     };
 
+    // onAddActivity(newActivity);
     console.log(newActivity);
     event.target.reset();
   }
