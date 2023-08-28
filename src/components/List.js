@@ -25,7 +25,7 @@ export default function List({ activities, weather, onDeleteActivity }) {
           ? "It's sunny! Here are some things you can do outside:"
           : "It's raining! Here are some things you can do inside:"}
       </h2>{" "}
-      :<ul>{listItems}</ul>
+      <ul>{listItems}</ul>
     </>
   );
 }
