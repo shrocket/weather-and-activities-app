@@ -9,6 +9,7 @@ function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
   });
+
   function handleAddActivity(newActivity) {
     const activityWithID = { ...newActivity, id: uid() };
     setActivities([...activities, activityWithID]);
