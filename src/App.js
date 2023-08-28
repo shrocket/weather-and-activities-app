@@ -27,10 +27,19 @@ function App() {
     const activityWithID = { ...newActivity, id: uid() };
     setActivities([...activities, activityWithID]);
   }
+  function handleDeleteActivity(activity) {
+    setActivities(
+      activities.filter((_activity) => _activity.id !== activity.id)
+    );
+  }
   return (
     <>
+      <List
+        activities={activities}
+        weather={weather}
+        onDeleteActivity={handleDeleteActivity}
+      />
       <Form onAddActivity={handleAddActivity} />
-      <List activities={activities} weather={weather} />
     </>
   );
 }

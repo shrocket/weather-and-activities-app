@@ -1,4 +1,4 @@
-export default function List({ activities, weather }) {
+export default function List({ activities, weather, onDeleteActivity }) {
   console.log(activities);
 
   const filteredList = activities.filter(
@@ -9,6 +9,9 @@ export default function List({ activities, weather }) {
     <li key={activity.id}>
       {activity.name}
       {activity.isSunnyWeather ? "😎" : "🌧️"}
+      <button type="button" onClick={() => onDeleteActivity(activity)}>
+        x
+      </button>
     </li>
   ));
 
