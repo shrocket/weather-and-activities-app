@@ -1,38 +1,28 @@
-export default function List({ activities }) {
+export default function List({ activities, weather }) {
   console.log(activities);
 
-  const isSunny = true;
-  const sunnyList = activities.filter(
-    (activity) => activity.isSunnyWeather === isSunny
-  );
-  const rainyList = activities.filter(
-    (activity) => activity.isSunnyWeather !== isSunny
+  const filteredList = activities.filter(
+    (activity) => activity.isSunnyWeather === weather.isGoodWeather
   );
 
-  const listItems1 = sunnyList.map((activity) => (
-    <>
-      <li key={activity.id}>
-        {activity.name}
-        {activity.isSunnyWeather ? "😎" : "🌧️"}
-      </li>
-    </>
-  ));
-
-  const listItems2 = rainyList.map((activity) => (
-    <>
-      <li key={activity.id}>
-        {activity.name}
-        {activity.isSunnyWeather ? "😎" : "🌧️"}
-      </li>
-    </>
+  const listItems = filteredList.map((activity) => (
+    <li key={activity.id}>
+      {activity.name}
+      {activity.isSunnyWeather ? "😎" : "🌧️"}
+    </li>
   ));
 
   return (
     <>
-      <h2>It's sunny! Here are some things you can do outside:</h2>
-      <ul>{listItems1}</ul>
-      <h2>It's raining! Here are some things you can do inside:</h2>
-      <ul>{listItems2}</ul>
+      <h1>
+        {weather.condition} {weather.temperature}
+      </h1>
+      <h2>
+        {weather.isGoodWeather === true
+          ? "It's sunny! Here are some things you can do outside:"
+          : "It's raining! Here are some things you can do inside:"}
+      </h2>{" "}
+      :<ul>{listItems}</ul>
     </>
   );
 }
